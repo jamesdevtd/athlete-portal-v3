@@ -1,0 +1,28 @@
+.bg-blue-gradient {
+  background: rgb(47, 190, 255);
+  background: linear-gradient(180deg, rgba(47, 190, 255, 1) 0%, rgba(35, 149, 255, 1) 100%);
+}
+
+.bg-blue-y-gradient {
+  background: rgb(47, 190, 255);
+  background: linear-gradient(45deg, rgba(47, 190, 255, 1) 0%, rgba(35, 149, 255, 1) 100%);
+}
+
+.bg-grey-gradient {
+  background: rgb(125, 125, 125);
+  background: linear-gradient(180deg, rgba(125, 125, 125, 0.5) 0%, rgba(87, 86, 86) 100%);
+}
+
+.bg-white-gradient {
+  background: rgb(237, 237, 237);
+  background: linear-gradient(0deg, rgba(237, 237, 237, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.wall-blue-gradient {
+  background: #26a1ff;
+  background: linear-gradient(to bottom, #26a1ff 0%, #2f3a5c 100%);
+}
+
+.text-dark-blue {
+  color: rgb(2, 47, 89);
+}

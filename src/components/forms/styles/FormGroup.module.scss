@@ -1,0 +1,324 @@
+@import "@/styles/base/animations.scss";
+
+.formGroup :global {
+  @apply relative mb-2 flex flex-col gap-2 pl-8;
+  max-width: 800px;
+  .label {
+    span {
+      @apply font-title text-md font-semibold text-blue-brand;
+    }
+  }
+
+  .instructions {
+    @apply font-body text-gray-500;
+  }
+
+  .fields-group {
+    @apply flex flex-row flex-wrap pb-10;
+    gap: 15px;
+    &.hide-input {
+      input {
+        @apply text-white;
+      }
+    }
+    .col {
+      @apply flex flex-col justify-between;
+      width: calc(50% - 10px);
+      input,
+      select,
+      option {
+        @apply p-0 py-1 text-blue-dark placeholder-blue-dark;
+        @apply border-0 border-b-2 border-gray-400 text-md;
+        border-bottom-width: 1px;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+      textarea {
+        @apply mb-2 border-gray-400;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+    .error {
+      @apply text-red-500;
+    }
+    @media (max-width: 991px) {
+      @apply flex-col;
+      .col {
+        @apply w-full;
+      }
+    }
+  }
+
+  .location-group {
+    @apply mt-0 flex flex-row gap-5 pb-7;
+    .map-col {
+      @apply flex-none order-first;
+      width: 250px;
+      img {
+        @apply mt-2 h-full object-contain object-top;
+        height: 250px;
+      }
+    }
+    .fields-group {
+      @apply border-none pb-0;
+      .col {
+        @apply relative w-full;
+      }
+      .icon.map {
+        @apply absolute right-3 top-3 bg-contain bg-center bg-no-repeat opacity-50;
+        width: 13px;
+        height: 13px;
+        background-image: url(/icons/blue/map-pin.svg);
+      }
+    }
+    .autocomplete-field {
+      [class$="-control"] {
+        @apply border-0 border-b-2 border-gray-400 rounded-none mb-1 shadow-none pr-7;
+        border-bottom-width: 1px;
+        height: 30px;
+        div:first-child {
+          @apply p-0 w-full;
+        }
+        > div > div:last-child {
+          @apply w-full;
+        }
+        [class$="-placeholder"] {
+          @apply text-md;
+        }
+        [class$="-indicatorSeparator"],
+        [class$="-indicatorContainer"] {
+          @apply hidden;
+        }
+        input {
+          @apply p-0 py-1 text-blue-dark placeholder-blue-dark w-full text-md #{!important};
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+        input + div {
+          opacity: 0;
+        }
+      }
+      [class$="-menu"] {
+        @apply mt-0;
+      }
+    }
+    textarea {
+      @apply text-md;
+    }
+    @media (max-width: 991px) {
+      @apply flex-col;
+      .map-col {
+        @apply -order-none;
+      }
+    }
+  }
+
+  .react-datepicker-wrapper {
+    @apply relative;
+    input {
+      @apply w-full;
+    }
+  }
+  .react-datepicker {
+    @apply border-none rounded-xl #{!important};
+    @apply rounded-xl overflow-hidden pb-2;
+    @apply shadow-[0_0_7px_0_rgb(0,0,0,0.15)];
+    &__triangle {
+      display: none;
+    }
+    &__header {
+      @apply bg-white border-none pt-5 px-3;
+    }
+    &__navigation {
+      @apply items-center top-4;
+      &--previous {
+        @apply left-3;
+      }
+      &--next {
+        @apply right-3;
+      }
+    }
+    &__current-month {
+      @apply mb-5;
+    }
+    &__day-names {
+      @apply opacity-50;
+    }
+    &__navigation-icon {
+      @apply border-none rounded-md w-6 h-6 bg-white;
+      @apply shadow-[0_0_4px_0_rgb(0,0,0,0.3)];
+      &:before {
+        @apply inset-0 border-gray-700;
+        margin: auto 5px;
+        border-width: 2px 2px 0 0;
+        width: 8px;
+        height: 8px;
+      }
+      &--previous {
+        &:before {
+          margin: auto 10px;
+        }
+      }
+    }
+    &__time-container {
+      @apply w-24;
+    }
+    &__header--time {
+      @apply pt-2 mb-2 border-none shadow-sm shadow-gray-300;
+    }
+    &-popper {
+      @apply pt-0;
+    }
+  }
+
+  .dropzone-box {
+    @apply text-center grid place-items-center w-full relative;
+    @apply shadow-[0_0_2px_0_rgb(0,0,0,0.6)];
+    background-color: #ebedf7;
+    &.has-thumb {
+      @apply block;
+      img {
+        @apply block w-full;
+      }
+    }
+    svg {
+      @apply m-auto;
+      width: auto;
+      height: 54px;
+      opacity: 0.5;
+    }
+    .placeholder-info {
+      @apply p-10;
+      .error {
+        @apply text-md text-red-500;
+      }
+      h3 {
+        @apply text-base text-gray-500;
+      }
+      p {
+        @apply text-xxs;
+      }
+    }
+    .replace {
+      @apply absolute font-body capitalize hover:opacity-100;
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      padding: 5px 20px;
+      opacity: 0.7;
+    }
+  }
+
+  .Wysiwyg {
+    .rdw-editor-toolbar {
+      @apply flex;
+      @apply border border-gray-400 flex mb-0 border-b-0 py-1 pb-0;
+      > div {
+        @apply hidden;
+      }
+      [class$="-wrapper"] {
+        @apply border-none;
+        img {
+          @apply border-none;
+        }
+      }
+      .rdw-inline-wrapper {
+        @apply flex;
+        > div {
+          @apply hidden;
+        }
+        [title~="Bold"],
+        [title~="Italic"] {
+          @apply flex;
+        }
+      }
+      .rdw-list-wrapper {
+        @apply flex;
+        > div {
+          @apply hidden;
+          &:nth-child(1),
+          &:nth-child(2) {
+            @apply flex;
+          }
+        }
+      }
+      .rdw-history-wrapper,
+      .rdw-block-wrapper {
+        @apply flex;
+      }
+      // order
+      .rdw-block-wrapper {
+        // TODO style text dropdown to match mock-up
+        @apply hidden;
+        order: 1;
+        .rdw-dropdown-carettoopen {
+          @apply opacity-60;
+        }
+      }
+      .rdw-inline-wrapper {
+        order: 11;
+        @apply opacity-60;
+      }
+      .rdw-list-wrapper {
+        order: 12;
+        @apply opacity-60;
+      }
+      .rdw-history-wrapper {
+        @apply ml-auto;
+        order: 2;
+      }
+    }
+    .rdw-editor-main {
+      @apply border border-gray-400 p-3;
+    }
+  }
+}
+
+.formGroup {
+  > svg {
+    @apply absolute left-0 h-5 w-5 opacity-60;
+    top: 0px;
+  }
+  &:after {
+    @apply block h-1 w-full border-b border-gray-300;
+    content: "";
+  }
+  &:last-child:after {
+    display: none;
+  }
+  &.no-b-line {
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.errorBox :global {
+  @apply w-full top-0 left-0 absolute py-3 px-2;
+  & :local {
+    animation: slide-in-top 0.4s ease-in-out forwards;
+  }
+  .wrap {
+    @apply text-white bg-red-warning rounded-md flex flex-row;
+    @apply gap-3 py-2 px-3 items-center;
+    svg {
+      @apply w-5 h-5;
+    }
+    span {
+      @apply text-md;
+    }
+    button {
+      @apply ml-auto block flex-1 h-5;
+      svg {
+        @apply w-3 h-3 ml-auto;
+      }
+    }
+  }
+}

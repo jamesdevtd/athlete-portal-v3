@@ -1,0 +1,175 @@
+// @import "../../styles/base/animations.scss";
+
+$sidebarWidth: 180px;
+$sidebarCollapsedWidth: 95px;
+
+.dashboardLayout :global {
+  @apply relative flex h-auto flex-row bg-off-white min-h-screen;
+  .wall-bg {
+    @apply fixed top-0 h-screen w-full bg-white;
+    max-height: 530px;
+    svg {
+      @apply absolute left-0 bottom-0 block w-full;
+      height: 25vw;
+    }
+  }
+  .bottom-bg {
+    @apply bg-left-bottom bg-no-repeat;
+    background-image: url(/svg/bottom-white-curve.svg);
+    height: 120px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-size: auto 100%;
+  }
+  header {
+    @apply relative bg-transparent;
+  }
+
+  .bg {
+    @apply absolute block h-full w-full object-contain object-left-top
+    transition-all duration-500 ease-in-out;
+    max-height: 900px;
+    max-width: none;
+    z-index: -1;
+    @media (min-width: 1600px) {
+      @apply object-fill;
+    }
+    @media (max-width: 1400px) {
+      @apply object-cover;
+      max-height: 80vh;
+    }
+    @media (max-width: 1024px) and (max-height: 1024px) {
+      object-position: left top;
+    }
+    @media (max-width: 901px) {
+      object-fit: fill !important;
+      object-position: top !important;
+      height: 140%;
+      width: 140%;
+    }
+    @media (max-width: 600px) {
+    }
+    @media (max-height: 1200px) {
+      @apply max-h-screen object-cover object-bottom;
+    }
+    @media (max-height: 1024px) {
+      @apply object-cover;
+      max-height: none;
+      object-position: top;
+      max-width: none;
+      height: 140%;
+    }
+  }
+
+  .content {
+    @apply transition-all duration-500 ease-in-out ml-auto h-auto relative;
+    @apply flex flex-col gap-5;
+    margin-right: 15px;
+    width: calc(100% - $sidebarWidth - 30px);
+    .ContentWrap {
+      @apply mt-1 w-full bg-off-white drop-shadow-lg p-5 relative;
+      border-radius: 10px;
+      min-height: 700px;
+      &:before {
+        @apply bg-no-repeat bg-center absolute inset-0 m-auto opacity-5 bg-contain;
+        content: "";
+        height: calc(100% - 100px);
+        width: calc(100% - 30px);
+        background-image: url(/images/backgrounds/big-x.svg);
+      }
+    }
+    &.collapsed {
+      width: calc(100% - $sidebarCollapsedWidth - 40px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sidebar.outer {
+      width: $sidebarCollapsedWidth;
+      .logo {
+        margin: 20px auto 30px;
+        transform: rotate(-90deg) scale(2.5);
+      }
+      .nav {
+        h3 {
+          text-indent: -9999px;
+          @apply border-b-2 border-b-white;
+        }
+        ul {
+          @apply p-0;
+          li {
+            a {
+              @apply flex flex-nowrap;
+              width: 100px;
+              .icon-box {
+              }
+              span {
+                @apply hidden;
+              }
+            }
+          }
+        }
+        > button {
+          @apply hidden;
+        }
+      }
+    }
+    .content {
+      width: calc(100% - $sidebarCollapsedWidth - 15px);
+    }
+  }
+
+  // ICONS
+
+  .icon-box {
+    @apply bg-contain bg-center bg-no-repeat;
+    background-image: url(/icons/dashboard.svg);
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    &.calendar {
+      background-image: url(/icons/calendar.svg);
+    }
+    &.reports {
+      background-image: url(/icons/reports.svg);
+    }
+    &.settings {
+      background-image: url(/icons/settings.svg);
+    }
+    &.account {
+      background-image: url(/icons/account.svg);
+    }
+    &.referee {
+      background-image: url(/icons/referee.svg);
+    }
+    &.overview {
+      background-image: url(/icons/overview.svg);
+    }
+    &.fees {
+      background-image: url(/icons/fees.svg);
+    }
+    &.transactions {
+      background-image: url(/icons/transactions.svg);
+    }
+    &.calculator {
+      background-image: url(/icons/calculator.svg);
+    }
+    &.collapse-toggle {
+      background-image: url(/icons/collapse-toggle.svg);
+    }
+  }
+}
+
+@keyframes rotate-shrink {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(-90deg);
+  }
+  100% {
+    transform: scale(2.5) rotate(-90deg);
+  }
+}

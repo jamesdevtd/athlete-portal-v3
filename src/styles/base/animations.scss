@@ -1,0 +1,34 @@
+// USAGE: animation:rotateShrink 1.5s ease-out forwards;
+@keyframes rotateShrink {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(-90deg); /*0.5s*/
+  }
+  100% {
+    transform: scale(2.5) rotate(-90deg); /*1.5s here*/
+  }
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
