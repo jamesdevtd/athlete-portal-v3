@@ -62,14 +62,14 @@ const AthleteNav = ({ className }: Props) => {
         <div className="menu-group bottom">
           <ul>
             <li>
-              <button onClick={() => false} className="btn-link">
+              <Link href={'/help'}>
                 <div className="icon help"></div>
-              </button>
+              </Link>
             </li>
             <li>
-              <button onClick={() => false} className="btn-link">
+              <Link href={'/logout'}>
                 <div className="icon logout"></div>
-              </button>
+              </Link>
             </li>
           </ul>
         </div>

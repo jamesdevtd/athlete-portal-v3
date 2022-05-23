@@ -54,7 +54,7 @@ $iconWidth: 48px;
     .icon {
         @apply bg-contain bg-center bg-no-repeat w-full h-full;
         background-image: url(/icons/blue/home.svg);
-        background-size: 23px;
+        background-size: 22px;
         &.awards {
             background-image: url(/icons/blue/trophy.svg);
         }

@@ -83,22 +83,22 @@ export const athleteMenuItems = [
   {
     icon: 'awards',
     label: 'Awards',
-    url: '/#',
+    url: '/awards',
   },
   {
     icon: 'podium',
     label: 'Tournaments',
-    url: '/#',
+    url: '/leagues',
   },
   {
     icon: 'search-stats',
     label: 'Search Stats',
-    url: '/#',
+    url: '/search-stats',
   },
   {
     icon: 'settings',
     label: 'Settings',
-    url: '/#',
+    url: '/settings',
   },
 ];
 
