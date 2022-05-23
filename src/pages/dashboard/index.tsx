@@ -13,17 +13,19 @@ export default function Dashboard() {
   )
 }
 
-export async function getServerSideProps(context: any) {
-  const session = await getSession({ req: context.req });
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/login',
-        permanent: false
-      }
-    }
-  }
-  return {
-    props: { session }
-  }
-}
+
+// TODO: set dashboard as protected route
+// export async function getServerSideProps(context: any) {
+//   const session = await getSession({ req: context.req });
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: '/login',
+//         permanent: false
+//       }
+//     }
+//   }
+//   return {
+//     props: { session }
+//   }
+// }
