@@ -7,8 +7,9 @@ import styles from './AthleteNav.module.scss';
 
 import { athleteMenuItems } from '@/static/menuItems';
 
-import TagxLogoVertical from '~/svg/tag-x-vertical.svg';
 import DropDownNav from './DropDownNav';
+
+import TagxLogoVertical from '~/svg/tag-x-vertical.svg';
 
 interface MenuItems {
   icon: string;
@@ -68,7 +69,7 @@ const AthleteNav = ({ className }: Props) => {
         <div className="menu-group bottom">
           <ul>
             <li>
-              <Link href={'/help'}>
+              <Link href="/help" passHref>
                 <div className="icon help"></div>
               </Link>
             </li>

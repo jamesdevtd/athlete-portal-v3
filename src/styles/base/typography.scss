@@ -51,6 +51,12 @@ button,
       opacity: 0.5;
     }
   }
+  &.dark-blue {
+    @apply bg-blue-dark bg-none;
+  }
+  &.with-icon {
+    @apply flex flex-row gap-1 items-center py-1 px-2 capitalize;
+  }
 }
 
 input:focus {

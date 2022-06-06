@@ -7,16 +7,13 @@
     3. content - wrapper for props.children
 */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import styles from '@/components/layout/Dashboard.module.scss';
 
-
-import Header from '@/components/Header';
-
+import AthleteNav from '../navigation/AthleteNav';
 
 import BottomWhiteCurve from '~/svg/bottom-white-curve.svg';
-import AthleteNav from '../navigation/AthleteNav';
 
 
 
@@ -37,11 +34,12 @@ const Layout = (props: Props) => {
         <BottomWhiteCurve />
       </div>
 
-      <AthleteNav className={`${sidebarCollapse ? 'collapsed' : 'expanded'}`} />
-
-      <div className={`content ${sidebarCollapse ? 'collapsed' : 'expanded'} pt-3`}>
+      <div className="content pt-3">
           {props.children}
       </div>
+
+      <AthleteNav className={`${sidebarCollapse ? 'collapsed' : 'expanded'}`} />
+
 
     </div>
   );

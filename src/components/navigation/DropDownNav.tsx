@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from './DropDownNav.module.scss';
 
 type Props = {
@@ -15,4 +16,4 @@ const DropDownNav = ({ className }: Props) => {
     )
 }
 
-export default DropDownNav
+export default DropDownNav;

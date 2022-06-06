@@ -1,0 +1,33 @@
+.EventHeader :global {
+    @apply flex flex-row gap-2 items-center justify-between;
+    h2 {
+        @apply flex flex-row gap-2 items-center;
+        svg {
+            @apply block;
+        }
+    }
+    ul {
+        @apply flex flex-row;
+        li {
+            @apply block;
+            a {
+                @apply block py-1 px-3;
+                &:hover {
+                    @apply rounded-md bg-red-warning text-white;
+                }
+            }
+        }
+    }
+    .series-info {
+        .logo {
+            @apply flex flex-row relative;
+            img {
+                @apply block;
+                width: 20px;
+            }
+        }
+        .menu {
+            @apply flex flex-row;
+        }
+    }
+}
