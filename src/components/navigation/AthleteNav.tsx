@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import TagxLogoVertical from '~/svg/tag-x-vertical.svg';
-import { CircleFlag } from 'react-circle-flags';
 import Link from 'next/link';
-import { athleteMenuItems } from '@/static/menuItems';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { CircleFlag } from 'react-circle-flags';
+
 import styles from './AthleteNav.module.scss';
+
+import { athleteMenuItems } from '@/static/menuItems';
+
+import TagxLogoVertical from '~/svg/tag-x-vertical.svg';
+import DropDownNav from './DropDownNav';
 
 interface MenuItems {
   icon: string;
@@ -19,6 +23,7 @@ type Props = {
 const AthleteNav = ({ className }: Props) => {
   const router = useRouter();
   const [menuItems, setMenuItems] = useState<MenuItems[]>([]);
+  const [dropdownActive, setdropdownActive] = useState(false);
 
   useEffect(() => {
     setMenuItems(athleteMenuItems);
@@ -26,10 +31,11 @@ const AthleteNav = ({ className }: Props) => {
 
   return (
     <div className={`${styles.AthleteNav} ${className}`}>
-      <div className="user-name">
+      <button onClick={() => setdropdownActive(!dropdownActive)} className="user-name">
         <span className="initial">RD</span>
         <span className="firstname">Ryan</span>
-      </div>
+        <DropDownNav className={`${dropdownActive ? 'active' : 'inactive'}`} />
+      </button>
       <div className='nav main-nav'>
         <div className='menu-group top'>
           <ul>
@@ -64,11 +70,6 @@ const AthleteNav = ({ className }: Props) => {
             <li>
               <Link href={'/help'}>
                 <div className="icon help"></div>
-              </Link>
-            </li>
-            <li>
-              <Link href={'/logout'}>
-                <div className="icon logout"></div>
               </Link>
             </li>
           </ul>

@@ -82,23 +82,28 @@ export const athleteMenuItems = [
   },
   {
     icon: 'awards',
-    label: 'Awards',
-    url: '/awards',
+    label: 'Events',
+    url: '/events',
   },
   {
     icon: 'podium',
-    label: 'Tournaments',
-    url: '/leagues',
+    label: 'Leaderboards',
+    url: '/leaderboards',
   },
   {
     icon: 'search-stats',
-    label: 'Search Stats',
-    url: '/search-stats',
+    label: 'Analysis',
+    url: '/analysis',
   },
   {
-    icon: 'settings',
-    label: 'Settings',
-    url: '/settings',
+    icon: 'team-builder',
+    label: 'Fantasy Team Builder',
+    url: '/fantasy-team-builder',
+  },
+  {
+    icon: 'rugby-ball',
+    label: 'Create a League',
+    url: '/league-builder',
   },
 ];
 

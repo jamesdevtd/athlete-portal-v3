@@ -1,0 +1,14 @@
+.DropDownNav :global {
+    @apply bg-white absolute rounded-md pb-3 z-50 drop-shadow-md;
+    @apply flex flex-col gap-1 py-1;
+    min-width: 100px;
+
+    a,
+    button {
+        @apply font-semibold block px-3 text-left;
+    }
+
+    .logout {
+        @apply text-red-500 border-t pt-2 mt-1 text-left;
+    }
+}
