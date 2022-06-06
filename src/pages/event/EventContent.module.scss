@@ -3,11 +3,11 @@ $flagWidth: 60px;
 
 .EventContent :global {
     @apply rounded-t-2xl h-auto overflow-hidden relative p-0 flex flex-row gap-5 bg-white;
-    min-height: 300px;
+    min-height: 800px;
     margin-top: -15px;
     z-index: 11;
     article {
-        @apply relative flex-1 flex flex-col gap-3 py-14 pr-5;
+        @apply relative flex-1 flex flex-col gap-3 py-14 pr-7;
         padding-left: 80px;
         > svg {
             @apply absolute w-7 h-7 opacity-40;
@@ -26,6 +26,6 @@ $flagWidth: 60px;
     }
     aside {
         background-color: #F2F2F2;
-        width: 400px;
+        width: 35%;
     }
 }

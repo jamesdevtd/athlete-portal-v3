@@ -1,6 +1,6 @@
 $sidebarWidth: 180px;
 $sidebarCollapsedWidth: 95px;
-$iconWidth: 48px;
+$iconWidth: 40px;
 
 .AthleteNav :global {
     @apply p-5 transition-all duration-500 ease-in-out left-0 top-0 fixed h-full bg-off-white shadow-lg z-10 font-semibold;
