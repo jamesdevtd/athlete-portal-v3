@@ -1,4 +1,5 @@
 $logoWidth: 150px;
+$flagWidth: 60px;
 
 .EventBanner :global {
     @apply rounded-t-2xl h-auto overflow-visible relative p-5;
@@ -32,11 +33,22 @@ $logoWidth: 150px;
         @apply absolute inset-x-0 m-auto;
         bottom: -65px;
         img {
-          @apply rounded-full rounded-full drop-shadow-default m-auto relative z-20;
-          width: $logoWidth;
-          height: $logoWidth;
+            @apply rounded-full rounded-full drop-shadow-default m-auto relative z-20;
+            width: $logoWidth;
+            height: $logoWidth;
         }
-      }
+    }
+    .flag {
+        @apply absolute z-20;
+        bottom: 35px;
+        right: 30px;
+        img {
+            @apply drop-shadow-default border-white rounded-full;
+            border-width: 3px;
+            width: $flagWidth;
+            height: $flagWidth;
+        }
+    }
 }
 
 .EventBanner:before {

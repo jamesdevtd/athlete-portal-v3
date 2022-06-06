@@ -1,0 +1,25 @@
+$logoWidth: 150px;
+$flagWidth: 60px;
+
+.EventContent :global {
+    @apply rounded-t-2xl h-auto overflow-visible relative p-5 flex flex-row gap-5;
+    min-height: 300px;
+    article {
+        @apply relative flex-1 flex flex-col gap-3 py-10 pl-10 pr-5;
+        > svg {
+            @apply absolute top-11 left-0 w-7 h-7 opacity-60;
+        }
+        h2 {
+            @apply w-full text-2xl;
+        }
+        .content {
+            @apply w-full block m-0 text-lg;
+            p {
+                @apply w-full mb-4;
+            }
+        }
+    }
+    aside {
+        width: 300px;
+    }
+}
