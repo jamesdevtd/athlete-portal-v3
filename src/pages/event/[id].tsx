@@ -2,6 +2,7 @@ import ContentWrap from '@/components/layout/ContentWrap'
 import Layout from '@/components/layout/Layout'
 import { GetServerSideProps } from 'next'
 import React from 'react'
+import EventBanner from './EventBanner'
 import EventHeader from './EventHeader'
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
@@ -25,9 +26,9 @@ type Props = {
 export default function Event({ id }: Props) {
   return (
       <Layout>
-          <ContentWrap className={`event-id-${id}`}>
+          <ContentWrap className={`event-id-${id} max-w-7xl`}>
             <EventHeader />
-            <header></header>
+            <EventBanner />
           </ContentWrap>
       </Layout>
   )

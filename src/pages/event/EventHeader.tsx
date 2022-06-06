@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { CircleFlag } from 'react-circle-flags';
+import { BsFillCaretDownFill } from 'react-icons/bs';
 
 import styles from './EventHeader.module.scss';
 
@@ -34,19 +35,21 @@ const EventHeader = ({ className }: Props) => {
                 <Link href="/#">Comparison</Link>
             </li>
         </ul>
-        <button className='btn dark-blue with-icon' onClick={() => false}>
+        <button className='btn dark-blue with-icon view-calendar' onClick={() => false}>
             <CalendarIcon />
             View Calendar
         </button>
-        <div className="series-info hidden">
+        <div className="series-info">
             <div className="logo">
                 <img src={seriesLogo} alt="series logo" />
-                <CircleFlag countryCode='US' className="h-4" />
+                <div className="flag">
+                    <CircleFlag countryCode='us' className="h-4" />
+                </div>
             </div>
             <div className="menu">
                 <button>
                     OPEN MENS
-                    <ChevronIcon />
+                    <BsFillCaretDownFill />
                 </button>
                 <span>Open Mens</span>
             </div>
