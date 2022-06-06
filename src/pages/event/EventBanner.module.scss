@@ -2,7 +2,7 @@ $logoWidth: 150px;
 $flagWidth: 60px;
 
 .EventBanner :global {
-    @apply rounded-t-2xl h-auto overflow-visible relative p-5;
+    @apply rounded-t-2xl h-auto overflow-visible relative p-5 pb-8;
     min-height: 400px;
     .event-photo {
         @apply absolute w-full h-full bg-cover bg-no-repeat z-0 rounded-t-2xl top-0 left-0;
@@ -31,7 +31,7 @@ $flagWidth: 60px;
     }
     .logo {
         @apply absolute inset-x-0 m-auto;
-        bottom: -65px;
+        bottom: -50px;
         img {
             @apply rounded-full rounded-full drop-shadow-default m-auto relative z-20;
             width: $logoWidth;
@@ -40,7 +40,7 @@ $flagWidth: 60px;
     }
     .flag {
         @apply absolute z-20;
-        bottom: 35px;
+        bottom: 40px;
         right: 30px;
         img {
             @apply drop-shadow-default border-white rounded-full;

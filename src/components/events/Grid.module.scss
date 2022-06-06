@@ -111,22 +111,6 @@
         }
       }
     }
-
-    .grid-footer {
-      margin-bottom: -25px;
-
-      &::before {
-        content: "";
-        position: relative;
-        top: 0px;
-        left: -14px;
-        z-index: -1;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 4px;
-        width: 101.5%;
-        height: 4px;
-        display: inline-block;
-      }
-    }
   }
 
 }
